@@ -3,7 +3,7 @@ import { getCatsSuccess } from "./catState";
 
 function* workGetCatsFetch() {
   const cats = yield call(() => fetch("https://api.thecatapi.com/v1/breeds"));
-  const jsonCats = (yield cats.json()).slice(0, 10);
+  const jsonCats = (yield cats.json()).slice(0, 100);
   yield put(getCatsSuccess(jsonCats));
 }
 
